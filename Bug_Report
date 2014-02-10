@@ -1,0 +1,3 @@
+Bug Report
+
+2/14/14 -- Found a bug in Mockup.py where if you change the view the output is not correct
