@@ -1,3 +1,13 @@
 Bug Report
 
-2/14/14 -- Found a bug in Mockup.py where if you change the view the output is not correct
+Bug No   Date Found   State     Closed Date  Desc   
+------   ----------   -----     -----------  ----                              
+1        2/10/14      Resolved  N/A          In Mockup.py if you change the view the 
+                                             output is not correct
+                                             Resolved: Problem was that the server assignments
+                                             did not get cleared after reassigning the active
+                                             servers in the view change (error has not been
+                                             reproduced after fix)
+2        2/10/14      Resolved  2/10/14      In Mockup.py view_num kept increasing but
+                                             all_views has to take view_num % len(all_views), which
+                                             it didn't before

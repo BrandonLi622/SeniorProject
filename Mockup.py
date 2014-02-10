@@ -214,13 +214,17 @@ while True:
     while not check_view(current_view, server_states):
         print "bad view", current_view
         view_num += 1
-        current_view = all_views[view_num]
+        current_view = all_views[view_num % len(all_views)]
+        
+        #clear out the assignments
+        server_msgs = []
         for i in range(0,s_count):
             server_msgs.append(tuple())
+        
+        print "new view", current_view
             
         #Try again with another view, and this simulates telling the clients what the new view is
         server_msgs = client_protocol(client_states, c_count, current_view, shared_secrets, server_msgs)
-    print view_num, current_view
     
     #Generating the server ciphertext
     for i in range(0,s_count):
