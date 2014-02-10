@@ -2,12 +2,14 @@ import sys
 import random
 import math
 
+#the length of the entire message that all clients will send
 maxlength = 0
 
 def xor_strings(s,t):
     return "".join(chr(ord(a)^ord(b)) for a,b in zip(s,t))
 
-#assume msg is a single character and that msg and slotNum are 0-indexed
+#assume each client gets a single character slot and that msg and slotNum are 0-indexed
+#msg is the client's single character message for the round
 #slotMax is length of entire message
 def insert_in_slot(msg, slotNum, slotMax):
     runningString = ""
@@ -37,7 +39,7 @@ def xor_all_strings(*strs):
     return running_s
 
 #when client encrypts shared keys with message
-#normally should be hashed shared keys, but shouldn't make any difference
+#normally should be hashed shared keys, but shouldn't make any difference for this mockup
 def encrypt(msg, client_num, view, secrets):
     for serv_num in view:
         msg = xor_strings(msg, secrets[serv_num][client_num])
@@ -69,6 +71,8 @@ def get_cleartext(view, *serv_cips):
         counter += 1
     return running_s
 
+#Assigns a particular clients message, represented by msg (this msg already has it in the proper slot)
+# to a server that is in the view
 def assign_server(msg, view, serv_msgs):
     index = random.choice(view)
     serv_msgs[index] = serv_msgs[index] + (msg,)
@@ -109,10 +113,7 @@ def gen_secrets(s_count, c_count):
             secrets[i].append(gen_secret(c_count))
     return secrets
 
-#Returns the list of active servers associated with a view
-#def select_active_servers(s_count, view_num):
-#    num_servs = int(ceil(2.0 / 3.0 * s_count))
-
+#A recursive function to help get all of the views
 def gen_all_views_helper(s_count, loop_num, target_size, all_combs):
     #if the lists are at the target size, then terminate
     if loop_num == target_size:
@@ -143,7 +144,9 @@ def check_view(view, serv_states):
         if not serv_states[serv]:
             return False
     return True
-    
+
+#Described in Dissent paper, all of the things the client does before and including passing
+# the message to the server
 def client_protocol(client_states, c_count, current_view, shared_secrets, server_msgs):
     #Intermediate variables
     var = []
@@ -166,7 +169,7 @@ def client_protocol(client_states, c_count, current_view, shared_secrets, server
     return server_msgs
 
 
-###MAIN STUFF###
+#####MAIN#####
 random.seed()
 view_num = 0
 s_count = int(raw_input("Number of servers: "))
@@ -177,9 +180,7 @@ all_views = gen_all_views(s_count)
 current_view = all_views[0]
 print current_view
 
-#just using 5 letter words as shared secrets
 #indexed by server#, client#
-#assume that there are 3 servers and 5 clients, and each client gets 1 letter as a slot
 shared_secrets = gen_secrets(s_count, c_count) 
 
 while True:
@@ -217,13 +218,15 @@ while True:
         for i in range(0,s_count):
             server_msgs.append(tuple())
             
-         #Try again with another view, and this simulates telling the clients what the new view is
+        #Try again with another view, and this simulates telling the clients what the new view is
         server_msgs = client_protocol(client_states, c_count, current_view, shared_secrets, server_msgs)
     print view_num, current_view
     
+    #Generating the server ciphertext
     for i in range(0,s_count):
         serv_cip.append(decrypt_part1(i, client_states, shared_secrets, *server_msgs[i]))
 
+    #All client's messages put together
     decrypted = get_cleartext(current_view, *tuple(serv_cip))
     print decrypted
     
