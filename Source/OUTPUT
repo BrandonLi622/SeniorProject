@@ -1,0 +1,133 @@
+
+(Server:6857): GLib-GIO-WARNING **: FAMOpen failed, FAMErrno=0
+
+
+(Client:6859): GLib-GIO-WARNING **: FAMOpen failed, FAMErrno=0
+
+
+(Client:6862): GLib-GIO-WARNING **: FAMOpen failed, FAMErrno=0
+
+
+(Server:6858): GLib-GIO-WARNING **: FAMOpen failed, FAMErrno=0
+
+
+(Client:6860): GLib-GIO-WARNING **: FAMOpen failed, FAMErrno=0
+
+
+(Client:6861): GLib-GIO-WARNING **: FAMOpen failed, FAMErrno=0
+
+(1, 0) 
+bound to UDP port  47877 
+(1, 0) 
+bound to UDP port  47872 
+Connected to server at:   QHostAddress( "127.0.0.1" )  : "47876" 
+(1, 0) 
+Oops, no ports in my default range  47876 - 47877  available 
+(1, 0) 
+(1, 0) 
+bound to UDP port  47873 
+bound to UDP port  47874 
+Connected to server at:   QHostAddress( "127.0.0.1" )  : "47876" 
+Connected to server at:   QHostAddress( "127.0.0.1" )  : "47877" 
+(1, 0) 
+bound to UDP port  47875 
+Connected to server at:   QHostAddress( "127.0.0.1" )  : "47877" 
+Full msg:  "C:Xfd               " 
+Pre-Encrypted 
+"C:Xfd               " 
+Server is fine 
+"1" 
+1   0 
+"¸wü@·QVµãT4ý²­DÂV" 20 
+Server is fine 
+"0" 
+0   0 
+"gÆisQÿJì)Íº«òûãF|ÂTø" 20 
+"yFéuh;¼Î¿/ÈqË "O" 
+Sent to:   QHostAddress( "127.0.0.1" )  "47876" 
+QMap(("ClientID", QVariant(uint, 0) ) ( "Message" ,  QVariant(QByteArray, "yFéuh;¼Î¿/ÈqË "O") ) ( "ViewNum" ,  QVariant(uint, 0) ) )  
+Full msg:  "     b^[yh          " 
+Pre-Encrypted 
+"     b^[yh          " 
+Server is fine 
+"1" 
+1   1 
+"
+ë%.èìÀÖÏZTI@$" 20 
+Server is fine 
+"0" 
+0   1 
+"gÆisQÿJì)Íº«òûãF|ÂTø" 20 
+"MPv_u'¼ Z]Õ2¢fü" 
+Sent to:   QHostAddress( "127.0.0.1" )  "47876" 
+QMap(("ClientID", QVariant(uint, 1) ) ( "Message" ,  QVariant(QByteArray, "MPv_u'¼ Z]Õ2¢fü") ) ( "ViewNum" ,  QVariant(uint, 0) ) )  
+Yeah! 
+Full msg:  "          `\N =     " 
+Pre-Encrypted 
+"          `\N =     " 
+Server is fine 
+"1" 
+1   2 
+"ÂvÂ·óüp6J'LªÔ¯ñ," 20 
+Server is fine 
+"0" 
+0   2 
+"úDOÕÒ
+")~­BÜ}?!Ñ
+OO¦¯Ùêø" 
+Sent to:   QHostAddress( "127.0.0.1" )  "47877" 
+QMap(("ClientID", QVariant(uint, 2) ) ( "Message" ,  QVariant(QByteArray, ")~­BÜ}?!Ñ
+OO¦¯Ùêø") ) ( "ViewNum" ,  QVariant(uint, 0) ) )  
+Yeah! 
+Success! 
+Full msg:  "               ;KPOZ" 
+Pre-Encrypted 
+"               ;KPOZ" 
+Server is fine 
+"1" 
+1   3 
+"µè¦­²x®_ãØç)òx)" 20 
+Server is fine 
+"0" 
+0   3 
+":ÑØ(Q|È°ðÊ:	h¯'" 20 
+"îMà×ñà¨DûÂóý²
+&T" 
+Sent to:   QHostAddress( "127.0.0.1" )  "47877" 
+QMap(("ClientID", QVariant(uint, 3) ) ( "Message" ,  QVariant(QByteArray, "îMà×ñà¨DûÂóý²
+&T") ) ( "ViewNum" ,  QVariant(uint, 0) ) )  
+Yeah! 
+Success! 
+All messages 
+QHash((2, ")~­BÜ}?!Ñ
+OO¦¯Ùêø")(3, "îMà×ñà¨DûÂóý²
+&T")) 
+Server is fine 
+"0" 
+1   0 
+"¸wü@·QVµãT4ý²­DÂV" 20 
+Server is fine 
+"1" 
+1   1 
+"
+ë%.èìÀÖÏZTI@$" 20 
+Server is fine 
+"2" 
+1   2 
+"ÂvÂ·óüp6J'LªÔ¯ñ," 20 
+Server is fine 
+"3" 
+1   3 
+"µè¦­²x®_ãØç)òx)" 20 
+My cipher 
+"rÀò¾êñ[qÝÙØ²Âpe4" 
+Sent to:   QHostAddress( "127.0.0.1" )  "47876" 
+QMap(("Cipher", QVariant(QByteArray, "rÀò¾êñ[qÝÙØ²Âpe4") ) ( "ServerID" ,  QVariant(uint, 1) ) )  
+Sent to:   QHostAddress( "127.0.0.1" )  "47874" 
+QMap(("ReturnMessage", QVariant(QByteArray, "cxFDB~{YH@|n
+"cxFDB~{YH@|n
+Sent to:   QHostAddress( "127.0.0.1" )  "47875" 
+"cxFDB~{YH@|n
+"cxFDB~{YH@|n
+QMap(("ReturnMessage", QVariant(QByteArray, "cxFDB~{YH@|n
+"cxFDB~{YH@|n

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+vari=0
+varj=0
+numServs=3
+numClis=6
+
+while [ "$vari" -lt "$numServs" ]
+do
+Server-build-Desktop-Debug/Server &>> ./servOutput &
+vari=$(($vari+1))
+done
+
+while [ "$varj" -lt "$numClis" ]
+do
+Client-build-Desktop-Debug/Client &>> ./cliOutput &
+varj=$(($varj+1))
+done
