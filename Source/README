@@ -1,0 +1,20 @@
+Brandon Li
+CPSC 490
+
+Extending Dissent to tolerate server failures
+
+Use as:
+./runProtocol {numServers} {numClients} {slotLength}
+
+This version of the protocol uses fixed length messages
+
+2/3 majority needed for a view change (servers can propose a view change from the UI, currently)
+
+A view is defined as 2/3 of the servers
+
+In each view (which each node (client or server) calculates on the fly, each client is matched with a specific server
+
+From the UI (client): type in messages of the specified length or just hit enter to randomly generate a message
+From the UI (server): propose view changes
+
+Right now all of the clients must send a message before the round terminates
